@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: undefined
+    repoURL: https://github.com/furkannarin/argocd-guestbook.git
     targetRevision: HEAD
     path: guestbook
   destination:
