@@ -3,12 +3,12 @@ kind: Job
 metadata:
   name: wave-test-job
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   template:
     spec:
       containers:
       - name: reader
         image: busybox
-        command: ["sh", "-c", "echo wave -1 starting; sleep 10; echo wave -1 done"]
+        command: ["sh", "-c", "echo Job waits for all resources & configmap 1"]
       restartPolicy: Never
