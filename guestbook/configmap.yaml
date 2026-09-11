@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: wave-test-config
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/sync-wave: "1"
 data:
-  message: "ConfigMap deploys first"
+  message: "ConfigMap deploys last"
