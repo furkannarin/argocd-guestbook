@@ -10,5 +10,5 @@ spec:
       containers:
       - name: reader
         image: busybox
-        command: ["sh", "-c", "echo Job waits for wave 1"]
+        command: ["sh", "-c", "echo wave -1 starting; sleep 10; echo wave -1 done"]
       restartPolicy: Never
