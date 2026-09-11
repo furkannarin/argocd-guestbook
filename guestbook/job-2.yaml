@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-after-svc
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-options: Replace=true
+spec:
+  template:
+    spec:
+      containers:
+      - name: reader
+        image: busybox
+        command: ["sh", "-c", "echo Job start starting; sleep 10; echo Job after svc finished done"]
+      restartPolicy: Never
