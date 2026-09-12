@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-after-configmap
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-options: Replace=true
+spec:
+  template:
+    spec:
+      containers:
+      - name: reader
+        image: busybox
+        command: ["sh", "-c", "echo Job start starting; sleep 10; echo Job after configmap finished done"]
+      restartPolicy: Never
