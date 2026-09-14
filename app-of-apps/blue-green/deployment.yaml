@@ -22,3 +22,5 @@ spec:
         - name: COLOR
           value: "blue"
         resources: {}
+        ports:
+        - targetPort: 8080
