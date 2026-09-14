@@ -23,4 +23,4 @@ spec:
           value: "blue"
         resources: {}
         ports:
-        - targetPort: 8080
+        - containerPort: 8080
