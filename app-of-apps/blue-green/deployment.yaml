@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bgd
+  labels:
+    app: bgd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bgd
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: bgd
+    spec:
+      containers:
+      - image: quay.io/redhatworkshops/bgd:latest
+        name: bgd
+        env:
+        - name: COLOR
+          value: "blue"
+        resources: {}
