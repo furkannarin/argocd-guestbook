@@ -3,8 +3,9 @@ kind: Application
 metadata:
   name: root
   namespace: argocd
-  finalizers:
-  - resources-finalizers.argocd.argoproj.io
+  # somehow prevents deletion. maybe docker-desktop cant clean this finalizer.
+  # finalizers:
+  # - resources-finalizers.argocd.argoproj.io
 spec:
   project: default
   source:
